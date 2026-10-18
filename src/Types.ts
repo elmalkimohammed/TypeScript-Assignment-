@@ -1,10 +1,10 @@
 
-type MissionPlanets = "Mars" | "Moon" | "Saturn" | "Titan"
+type DestinedPlanets = "Mars" | "Moon" | "Saturn" | "Titan"
 
 type Astronaut = {
     Id : number,
     Name : string,
-    Mission : MissionPlanets
+    Destination : DestinedPlanets
 }
 
-export type { Astronaut }
+export type { Astronaut , DestinedPlanets }
