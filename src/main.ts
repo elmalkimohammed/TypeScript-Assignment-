@@ -1,6 +1,9 @@
 
-import FunctionsFile = require("./Functions");
+import FunctionsFile = require("./Functions")
 
 /* The First Exercice */
-const NewlyAssignedAstronaut = FunctionsFile.NewAstronaut( 1 , "Mohammed" , "Mars" )
-console.log(NewlyAssignedAstronaut)
+let NewlyCreatedAstronaut : FunctionsFile.NewAstronaut = { 
+    Name : "Mohammed",
+    Destination : "Saturn"
+}
+console.log(NewlyCreatedAstronaut)
