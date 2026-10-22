@@ -1,6 +1,7 @@
 
 import FunctionsFile = require("./Functions")
 import { AstronautRepository } from "./Repositories"
+import { SpaceCraftLunched } from "./Functions"
 import TypesFile = require("./Types")
 
 /* The First Exercice */
@@ -40,3 +41,20 @@ console.log("   --| Full Array |--")
 console.log(TypesFile.SpaceStation)
 console.log("   --| Sorted Array |--")
 console.log(FoundAstronauts)
+
+/* The Third Exercice */
+console.log("---------------------------Ex3---------------------------")
+
+let NewlyCreatedBusyAstronaut : TypesFile.BusyAstronaut = {
+    Id : 1,
+    Name : "Samir",
+    Destination : "X",
+    SpaceStation : "ISS",
+    MissionState : "Lunched"
+}
+
+SpaceCraftLunched({ 
+    type: "A Space Craft Has Been Lunched",
+    AstronautId: NewlyCreatedBusyAstronaut.Id,
+    StateOfMission: "Lunched" 
+})
