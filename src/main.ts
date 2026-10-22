@@ -58,3 +58,25 @@ SpaceCraftLunched({
     AstronautId: NewlyCreatedBusyAstronaut.Id,
     StateOfMission: "Lunched" 
 })
+/* The Fourth Exercice */
+console.log("---------------------------Ex4---------------------------")
+
+let FirstNewlyCreatedBusyAstronaut: TypesFile.BusyAstronaut = {
+    Id: 1,
+    Name: "Hamid",
+    Destination: "Mars",
+    SpaceStation: "ISS",
+    MissionState: "Pending" // Valid
+};
+
+let SecondNewlyCreatedBusyAstronaut: TypesFile.BusyAstronaut = {
+    Id: 2,
+    Name: "Sarah",
+    Destination: "Moon",
+    SpaceStation: "Mir",
+    MissionState: "Lunched" // Invalid
+};
+    // Utilizing The Already Defined AstronautRepo Object
+AstronautRepo.add(FirstNewlyCreatedBusyAstronaut)
+console.log( TypesFile.BusyAstronautCollection )
+AstronautRepo.add(SecondNewlyCreatedBusyAstronaut) // Will Throw An Exception

@@ -9,6 +9,9 @@ type States = "Lunched" | "Pending" | "Arrived"
 // An Array Containing All Of Our Creatted Astronauts
 export let SpaceStation: any[] = [];
 
+// An Array Containing All Of Our Busy Astronauts
+export let BusyAstronautCollection: any[] = [];
+
 // For The First Exercice 
 type Astronaut = {
     Id : number,
