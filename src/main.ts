@@ -80,7 +80,7 @@ let SecondNewlyCreatedBusyAstronaut: TypesFile.BusyAstronaut = {
 AstronautRepo.add(FirstNewlyCreatedBusyAstronaut)
 console.log( TypesFile.BusyAstronautCollection )
 // AstronautRepo.add(SecondNewlyCreatedBusyAstronaut) // Will Throw An Exception. Needs To Be Commented To Test The Rest Of The Code
-/* The Fourth Exercice */
+/* The Fifth Exercice */
 console.log("---------------------------Ex5---------------------------")
 
 // The Cach Will Hit Here Because We Already Searched With 'Saturn' In A Previous Exercice
@@ -89,3 +89,26 @@ console.log(AstronautRepo.findByMission("Saturn"));
 // The Cach Will Not Hit Here Because It's The First Time We're Searching With 'Mars
 console.log("Mars search:");
 console.log(AstronautRepo.findByMission("Mars"));
+/* The Sixth Exercice */
+console.log("---------------------------Ex6---------------------------");
+
+const validAstronaut: unknown = {
+    Id: 3,
+    Name: "Youssef",
+    Destination: "Mars",
+    SpaceStation: "ISS",
+    MissionState: "Pending"
+};
+
+const invalidAstronaut: unknown = {
+    Id: 4,
+    Name: "Sara",
+    Destination: "Mars",
+    SpaceStation: "Durmstrang",
+    MissionState: "Pending"
+};
+
+console.log(FunctionsFile.isBusyAstronaut(validAstronaut))     // true
+console.log(FunctionsFile.isBusyAstronaut(invalidAstronaut))   // false
+console.log(FunctionsFile.isBusyAstronaut(null))               // false
+console.log(FunctionsFile.isBusyAstronaut("not an astronaut")) // false
