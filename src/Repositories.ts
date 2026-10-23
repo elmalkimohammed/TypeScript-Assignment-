@@ -1,5 +1,5 @@
 
-import { ValidateMissionState } from "./Decorators"
+import { ValidateMissionState , CacheForFindingByMission } from "./Decorators"
 import Types = require("./Types");
 
 export class AstronautRepository 
@@ -8,14 +8,12 @@ export class AstronautRepository
     public AstronautCollection : any[] = [] ;
 
     /* The Method Responisble For Displaying Astronauts From The SpaceStation Array By The Desired Planet */
-    findByMission( ChosenPlanet : Types.DestinedPlanets ) : any {
-        for ( var Astr of Types.SpaceStation ) {
-            if ( Astr.Destination === ChosenPlanet )
-            {
-                this.AstronautCollection.push(Astr)
-            }
-        }
-        return this.AstronautCollection
+    @CacheForFindingByMission /* A Decorator That Will Be Caching Any Searched Planet */
+    findByMission(ChosenPlanet: Types.DestinedPlanets): Types.Astronaut[] {
+        return Types.SpaceStation.filter(
+            (Astr: Types.Astronaut) =>
+                Astr.Destination === ChosenPlanet
+        );
     }
 
     /* The Method Responsible For Adding Astronauts That Are Already In A Mission Into An Array */

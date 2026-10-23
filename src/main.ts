@@ -79,4 +79,13 @@ let SecondNewlyCreatedBusyAstronaut: TypesFile.BusyAstronaut = {
     // Utilizing The Already Defined AstronautRepo Object
 AstronautRepo.add(FirstNewlyCreatedBusyAstronaut)
 console.log( TypesFile.BusyAstronautCollection )
-AstronautRepo.add(SecondNewlyCreatedBusyAstronaut) // Will Throw An Exception
+// AstronautRepo.add(SecondNewlyCreatedBusyAstronaut) // Will Throw An Exception. Needs To Be Commented To Test The Rest Of The Code
+/* The Fourth Exercice */
+console.log("---------------------------Ex5---------------------------")
+
+// The Cach Will Hit Here Because We Already Searched With 'Saturn' In A Previous Exercice
+console.log("First Saturn search:");
+console.log(AstronautRepo.findByMission("Saturn"));
+// The Cach Will Not Hit Here Because It's The First Time We're Searching With 'Mars
+console.log("Mars search:");
+console.log(AstronautRepo.findByMission("Mars"));
